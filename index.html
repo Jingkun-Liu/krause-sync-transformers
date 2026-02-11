@@ -238,17 +238,6 @@
                       </a>
                     </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span> -->
-
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
                     <a href="https://github.com/Jingkun-Liu/KST_repo.git" target="_blank"
@@ -259,17 +248,6 @@
                     <span>Code</span>
                   </a>
                 </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span> -->
-                <!-- </a>
-              </span> -->
             </div>
           </div>
         </div>
@@ -301,13 +279,6 @@
       <div class="column is-four-fifths">
         <h2 class="title is-2.5">Introduction</h2>
         <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <!-- <p>
-            Self-attention in Transformers relies on globally normalized softmax weights, causing all tokens to compete for influence at every layer. When composed across depth, this interaction pattern induces strong synchronization dynamics that favor convergence toward a dominant mode, a behavior associated with representation collapse and attention sink phenomena. We introduce \textbf{Krause Attention}, a principled attention mechanism inspired by bounded-confidence consensus dynamics. Krause Attention replaces similarity-based global aggregation with distance-based, localized, and selectively sparse interactions, promoting structured local synchronization instead of global mixing. We relate this behavior to recent theory modeling Transformer dynamics as interacting particle systems, and show how bounded-confidence interactions naturally moderate attention concentration and alleviate attention sinks. Restricting interactions to local neighborhoods also reduces runtime complexity from quadratic to linear in sequence length. Experiments across vision (ViT on CIFAR/ImageNet), autoregressive generation (MNIST/CIFAR-10), and large language models (Llama/Qwen) demonstrate consistent gains with substantially reduced computation, highlighting bounded-confidence dynamics as a scalable and effective inductive bias for attention.
-          </p>
-          <p>
-            Empirically, Krause Attention delivers consistent and substantial gains across vision, generation, and language modeling tasks. For image classification, Krause Vision Transformers (ViTs) consistently outperform standard ViTs~\citep{dosovitskiy2021image} on CIFAR-10/100 and ImageNet-1K, achieving an \textbf{average accuracy improvement of $\mathbf{+3.7\%}$} while \textbf{reducing FLOPs by approximately $\mathbf{30\%}$} across model scales. In autoregressive image generation~\citep{parmar2018image}, Krause-based models achieve \textbf{lower negative log-likelihood} than standard Transformers while enabling \textbf{more than $\mathbf{2\times}$ faster inference}. For LLMs~\citep{team2024qwen2,grattafiori2024llama}, integrating Krause Attention as an auxiliary pathway consistently improves \textbf{zero-shot evaluation performance over LoRA-finetuned baselines}~\citep{hu2022lora} on a broad suite of challenging language reasoning benchmarks, indicating improved robustness to attention concentration effects. Together, these results demonstrate that bounded-confidence dynamics provide a \textbf{scalable, computationally efficient, and practically effective inductive bias} for self-attention mechanisms across diverse modalities and model regimes.
-          </p> -->
           <p>
             Self-attention in Transformers relies on globally normalized softmax weights, causing all tokens to compete for influence at every layer. When composed across depth, this interaction pattern induces strong synchronization dynamics that favor convergence toward a dominant mode, a behavior associated with representation collapse and attention sink phenomena. We introduce <strong>Krause Attention</strong>, a principled attention mechanism inspired by bounded-confidence consensus dynamics. Krause Attention replaces similarity-based global aggregation with distance-based, localized, and selectively sparse interactions, promoting structured local synchronization instead of global mixing. We relate this behavior to recent theory modeling Transformer dynamics as interacting particle systems, and show how bounded-confidence interactions naturally moderate attention concentration and alleviate attention sinks. Restricting interactions to local neighborhoods also reduces runtime complexity from quadratic to linear in sequence length. Experiments across vision (ViT on CIFAR/ImageNet), autoregressive generation (MNIST/CIFAR-10), and large language models (Llama/Qwen) demonstrate consistent gains with substantially reduced computation, highlighting bounded-confidence dynamics as a scalable and effective inductive bias for attention.
           </p>
@@ -353,29 +324,6 @@
   </div>
 </section>
 
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="item" style="max-width: 850px; margin: 0 auto;">
-        
-        <h2 class="title is-2.5 has-text-left">Krause Attention</h2>
-        
-        <div class="has-text-left">
-          <img src="static/images/figure2.pdf" 
-               alt="First research result visualization" 
-               loading="lazy" 
-               style="display: block; width: auto; max-width: none; min-width: 850px;"/> 
-        </div>
-
-        <h2 class="subtitle has-text-centered  mt-3">
-          Krause Attention computes RBF affinity scores, restricts updates to local neighborhoods, and applies top-k selective interactions.
-        </h2>
-        
-      </div>
-    </div>
-  </div>
-</section> -->
-
 <section class="hero is-small" style="background: transparent;">
   <div class="hero-body">
     <div class="container">
@@ -410,46 +358,6 @@
     </div>
   </div>
 </section>
-
-<!-- <section class="hero is-small" style="background-color: #f5f5f5 !important; padding: 40px 0;">
-  <div class="hero-body">
-    <div class="container">
-      <div class="item" style="max-width: 850px; margin: 0 auto;">
-        
-        <h2 class="title is-2.5 has-text-left">Attention Heatmaps in Vision Transformers</h2>
-        
-        <div class="has-text-left">
-          <img src="static/images/imagenet_heatmap_main.pdf" 
-               alt="First research result visualization" 
-               loading="lazy" 
-               style="max-width: 100%; height: auto; display: block;"/>
-        </div>
-
-        <h2 class="subtitle has-text-centered  mt-3">
-          Krause Attention yields more diverse attention heads.
-        </h2>
-        
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-small" style="background-color: #f5f5f5 !important; padding: 40px 0;">
-  <div class="hero-body">
-    <div class="container">
-      <div class="item" style="max-width: 850px; margin: 0 auto;">
-        <h2 class="title is-2.5 has-text-left">Attention Evolution Across Layers</h2>
-        <div class="has-text-left">
-          <img src="static/images/attention_evolution_map.pdf" alt="Third research result visualization" loading="lazy" style="max-width: 100%; height: auto; display: block;"/>
-        </div>
-        <h2 class="subtitle has-text-centered mt-3">
-          Evolution of attention scores across layers in KViTs/ViTs. Krause Attention (left) achieves stable multi-cluster formation, while
-          standard attention (right) progressively converges to a single global consensus.
-        </h2>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <section class="hero is-small" style="background-color: #f5f5f5 !important; padding: 40px 0;">
   <div class="hero-body">
@@ -490,58 +398,6 @@
     </div>
   </div>
 </section>
-
-
-
-<!-- Video carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1"> -->
-          <!-- TODO: Add poster image for better preview -->
-          <!-- <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            Your video file here -->
-            <!-- <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2"> -->
-          <!-- TODO: Add poster image for better preview -->
-          <!-- <video poster="" id="video2" controls muted loop height="100%" preload="metadata"> -->
-            <!-- Your video file here -->
-            <!-- <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3"> -->
-          <!-- TODO: Add poster image for better preview -->
-          <!-- <video poster="" id="video3" controls muted loop height="100%" preload="metadata"> -->
-            <!-- Your video file here -->
-            <!-- <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End video carousel -->
-
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2> -->
-
-      <!-- TODO: Replace with your poster PDF
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section> -->
-<!--End paper poster -->
-
-
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
