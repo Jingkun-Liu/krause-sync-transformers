@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" 
+          onload="renderMathInElement(document.body);"></script>
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="Krause Synchronization Transformers - Jingkun Liu, Yisong Yue, Max Welling, Yue Song">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="PAPER_TITLE">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="PAPER_TITLE">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>Krause Synchronization Transformers</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "PAPER_TITLE",
+    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "FIRST_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "SECOND_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONFERENCE_OR_JOURNAL_NAME"
+    },
+    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing", 
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "INSTITUTION_OR_LAB_NAME",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">Krause Synchronization Transformers</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=-Zxd9hcAAAAJ&hl=en" target="_blank">Jingkun Liu</a><sup>1&nbsp;2</sup>,</span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=tEk4qo8AAAAJ&hl=en&oi=ao" target="_blank">Yisong Yue</a><sup>3</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=8200InoAAAAJ&hl=en&oi=ao" target="_blank">Max Welling</a><sup>4&nbsp;5</sup>,</span>
+                    <span class="author-block">
+                      <a href="https://scholar.google.com/citations?user=Uza2i10AAAAJ&hl=en&oi=ao" target="_blank">Yue Song</a><sup>1&nbsp;2</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    <span class="author-block"><sup>1</sup>Shanghai Qi Zhi Institute, </span>
+                    <span class="author-block"><sup>2</sup>Tsinghua University, </span>
+                    <span class="author-block"><sup>3</sup>California Institute of Technology, </span>
+                    <span class="author-block"><sup>4</sup>University of Amsterdam, </span>
+                    <span class="author-block"><sup>5</sup>Cusp AI</span>
+                    <!-- TODO: Remove this line if no equal contribution
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- TODO: Add your supplementary material PDF or remove this section
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://github.com/Jingkun-Liu/KST_repo.git" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- TODO: Update with your arXiv paper ID -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span> -->
+                <!-- </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser image-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/figure1.pdf" 
+           alt="Description of the new attention mechanism" 
+           style="width: 80%; height: auto; display: block; margin: 0 auto;">
+      
+      <h2 class="subtitle has-text-centered" style="margin-top: 1.5rem;">
+        <strong>Krause Attention</strong>, grounded in bounded-confidence interactions, promotes localized multi-cluster synchronization (top). In contrast, standard self-attention tends to induce globally coupled dynamics that concentrate attention onto a dominant mode, often manifesting as attention sinks  (Xiao et al., 2024) (bottom).
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2.5">Introduction</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <!-- <p>
+            Self-attention in Transformers relies on globally normalized softmax weights, causing all tokens to compete for influence at every layer. When composed across depth, this interaction pattern induces strong synchronization dynamics that favor convergence toward a dominant mode, a behavior associated with representation collapse and attention sink phenomena. We introduce \textbf{Krause Attention}, a principled attention mechanism inspired by bounded-confidence consensus dynamics. Krause Attention replaces similarity-based global aggregation with distance-based, localized, and selectively sparse interactions, promoting structured local synchronization instead of global mixing. We relate this behavior to recent theory modeling Transformer dynamics as interacting particle systems, and show how bounded-confidence interactions naturally moderate attention concentration and alleviate attention sinks. Restricting interactions to local neighborhoods also reduces runtime complexity from quadratic to linear in sequence length. Experiments across vision (ViT on CIFAR/ImageNet), autoregressive generation (MNIST/CIFAR-10), and large language models (Llama/Qwen) demonstrate consistent gains with substantially reduced computation, highlighting bounded-confidence dynamics as a scalable and effective inductive bias for attention.
+          </p>
+          <p>
+            Empirically, Krause Attention delivers consistent and substantial gains across vision, generation, and language modeling tasks. For image classification, Krause Vision Transformers (ViTs) consistently outperform standard ViTs~\citep{dosovitskiy2021image} on CIFAR-10/100 and ImageNet-1K, achieving an \textbf{average accuracy improvement of $\mathbf{+3.7\%}$} while \textbf{reducing FLOPs by approximately $\mathbf{30\%}$} across model scales. In autoregressive image generation~\citep{parmar2018image}, Krause-based models achieve \textbf{lower negative log-likelihood} than standard Transformers while enabling \textbf{more than $\mathbf{2\times}$ faster inference}. For LLMs~\citep{team2024qwen2,grattafiori2024llama}, integrating Krause Attention as an auxiliary pathway consistently improves \textbf{zero-shot evaluation performance over LoRA-finetuned baselines}~\citep{hu2022lora} on a broad suite of challenging language reasoning benchmarks, indicating improved robustness to attention concentration effects. Together, these results demonstrate that bounded-confidence dynamics provide a \textbf{scalable, computationally efficient, and practically effective inductive bias} for self-attention mechanisms across diverse modalities and model regimes.
+          </p> -->
+          <p>
+            Self-attention in Transformers relies on globally normalized softmax weights, causing all tokens to compete for influence at every layer. When composed across depth, this interaction pattern induces strong synchronization dynamics that favor convergence toward a dominant mode, a behavior associated with representation collapse and attention sink phenomena. We introduce <strong>Krause Attention</strong>, a principled attention mechanism inspired by bounded-confidence consensus dynamics. Krause Attention replaces similarity-based global aggregation with distance-based, localized, and selectively sparse interactions, promoting structured local synchronization instead of global mixing. We relate this behavior to recent theory modeling Transformer dynamics as interacting particle systems, and show how bounded-confidence interactions naturally moderate attention concentration and alleviate attention sinks. Restricting interactions to local neighborhoods also reduces runtime complexity from quadratic to linear in sequence length. Experiments across vision (ViT on CIFAR/ImageNet), autoregressive generation (MNIST/CIFAR-10), and large language models (Llama/Qwen) demonstrate consistent gains with substantially reduced computation, highlighting bounded-confidence dynamics as a scalable and effective inductive bias for attention.
+          </p>
+      
+          <p>
+            Empirically, Krause Attention delivers consistent and substantial gains across vision, generation, and language modeling tasks. For image classification, Krause Vision Transformers (ViTs) consistently outperform standard ViTs (Dosovitskiy et al., 2021) on CIFAR-10/100 and ImageNet-1K, achieving an <strong>average accuracy improvement of \( \mathbf{+3.7\%} \)</strong> while <strong>reducing FLOPs by approximately 30%</strong> across model scales. In autoregressive image generation (Parmar et al., 2018), Krause-based models achieve <strong>lower negative log-likelihood</strong> than standard Transformers while enabling <strong>more than 2&times; faster inference</strong>. For LLMs (Yang et al., 2024a; Grattafiori et al., 2024), integrating Krause Attention as an auxiliary pathway consistently improves <strong>zero-shot evaluation performance over LoRA-finetuned baselines</strong> (Hu et al., 2022) on a broad suite of challenging language reasoning benchmarks, indicating improved robustness to attention concentration effects. Together, these results demonstrate that bounded-confidence dynamics provide a <strong>scalable, computationally efficient, and practically effective inductive bias</strong> for self-attention mechanisms across diverse modalities and model regimes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="hero is-small">
+  <div class="hero-body" style="background: transparent;">
+    <div class="container">
+      <div class="item" style="max-width: 850px; margin: 0 auto;">
+        <h2 class="title is-2.5 has-text-left">Krause Attention</h2>
+        <div class="has-text-left">
+          <img src="static/images/kst_gif.gif" alt="Teaser GIF" style="width: 100%; height: auto; display: block;">
+        <h2 class="subtitle has-text-centered mt-3">
+          Visual Illustration of our <strong>Krause Attention</strong>.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body" style="background-color: #f5f5f5 !important; padding: 40px 0;">
+    <div class="container">
+      <div class="item" style="max-width: 850px; margin: 0 auto;">
+        <h2 class="title is-2.5 has-text-left">Alleviating Attention Sinks in Krause-LLMs</h2>
+        <div class="has-text-left">
+          <img src="static/images/attention_sink_llama3.pdf" alt="Second research result visualization" loading="lazy" style="max-width: 100%; height: auto; display: block;"/>
+        </div>
+        <h2 class="subtitle has-text-centered mt-3">
+          Layer dynamics of first-token attentions on <strong>Llama3-8B</strong>.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="item" style="max-width: 850px; margin: 0 auto;">
+        
+        <h2 class="title is-2.5 has-text-left">Krause Attention</h2>
+        
+        <div class="has-text-left">
+          <img src="static/images/figure2.pdf" 
+               alt="First research result visualization" 
+               loading="lazy" 
+               style="display: block; width: auto; max-width: none; min-width: 850px;"/> 
+        </div>
+
+        <h2 class="subtitle has-text-centered  mt-3">
+          Krause Attention computes RBF affinity scores, restricts updates to local neighborhoods, and applies top-k selective interactions.
+        </h2>
+        
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero is-small" style="background: transparent;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="item" style="max-width: 850px; margin: 0 auto;">
+        
+        <h2 class="title is-2.5 has-text-left">Attention Heatmaps in Vision Transformers</h2>
+        
+        <div class="has-text-left">
+          <img src="static/images/imagenet_heatmap_main.pdf" 
+               alt="Attention Heatmaps" 
+               loading="lazy" 
+               style="max-width: 100%; height: auto; display: block;"/>
+        </div>
+        <h2 class="subtitle has-text-centered mt-3 mb-6">
+          <strong>Krause Attention</strong> yields more diverse attention heads.
+        </h2>
+
+        <hr style="background-color: #dbdbdb; height: 1px; margin: 3rem 0;">
+
+        <div class="has-text-left">
+          <img src="static/images/attention_evolution_map.pdf" 
+               alt="Attention Evolution" 
+               loading="lazy" 
+               style="max-width: 100%; height: auto; display: block;"/>
+        </div>
+        <h2 class="subtitle has-text-centered mt-3">
+          Evolution of attention scores across layers in KViTs/ViTs. <strong>Krause Attention</strong> (left) achieves stable multi-cluster formation, while
+          standard attention (right) progressively converges to a single global consensus.
+        </h2>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-small" style="background-color: #f5f5f5 !important; padding: 40px 0;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="item" style="max-width: 850px; margin: 0 auto;">
+        
+        <h2 class="title is-2.5 has-text-left">Attention Heatmaps in Vision Transformers</h2>
+        
+        <div class="has-text-left">
+          <img src="static/images/imagenet_heatmap_main.pdf" 
+               alt="First research result visualization" 
+               loading="lazy" 
+               style="max-width: 100%; height: auto; display: block;"/>
+        </div>
+
+        <h2 class="subtitle has-text-centered  mt-3">
+          Krause Attention yields more diverse attention heads.
+        </h2>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small" style="background-color: #f5f5f5 !important; padding: 40px 0;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="item" style="max-width: 850px; margin: 0 auto;">
+        <h2 class="title is-2.5 has-text-left">Attention Evolution Across Layers</h2>
+        <div class="has-text-left">
+          <img src="static/images/attention_evolution_map.pdf" alt="Third research result visualization" loading="lazy" style="max-width: 100%; height: auto; display: block;"/>
+        </div>
+        <h2 class="subtitle has-text-centered mt-3">
+          Evolution of attention scores across layers in KViTs/ViTs. Krause Attention (left) achieves stable multi-cluster formation, while
+          standard attention (right) progressively converges to a single global consensus.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero is-small" style="background-color: #f5f5f5 !important; padding: 40px 0;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="item" style="max-width: 1000px; margin: 0 auto;">
+        
+        <h2 class="title is-2.5 has-text-centered">Krause Autoregressive Transformers for Image Generation</h2>
+        
+        <div class="columns is-vcentered is-variable is-5">
+          
+          <div class="column">
+            <div class="has-text-left">
+              <img src="static/images/completion_mnist.pdf" 
+                   alt="Attention Heatmaps" 
+                   loading="lazy" 
+                   style="width: 100%; height: auto; display: block;"/>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="has-text-left">
+              <img src="static/images/completion_cifar10.pdf" 
+                   alt="Attention Evolution Across Layers" 
+                   loading="lazy" 
+                   style="width: 100%; height: auto; display: block;"/>
+            </div>
+          </div>
+
+        </div>
+
+        <h2 class="subtitle has-text-centered mt-3">
+          <p>
+            Samples completed by Krause Autoregressive Models (KARMs) on <strong>MNIST</strong> (left) and <strong>CIFAR-10</strong> (right).
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1"> -->
+          <!-- TODO: Add poster image for better preview -->
+          <!-- <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            Your video file here -->
+            <!-- <source src="static/videos/carousel1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2"> -->
+          <!-- TODO: Add poster image for better preview -->
+          <!-- <video poster="" id="video2" controls muted loop height="100%" preload="metadata"> -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3"> -->
+          <!-- TODO: Add poster image for better preview -->
+          <!-- <video poster="" id="video3" controls muted loop height="100%" preload="metadata"> -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2> -->
+
+      <!-- TODO: Replace with your poster PDF
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{LiuKrause2026,
+  title={Krause Synchronization Transformers},
+  author={Jingkun Liu and Yisong Yue and Max Welling and Yue Song},
+  journal={ArXiv},
+  year={2026},
+  url={https://your-domain.com/your-project-page}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
