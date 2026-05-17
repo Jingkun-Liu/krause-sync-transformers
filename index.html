@@ -22,7 +22,7 @@
     <!-- Fonts - Lora/Charter & Poppins for elegant reading -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Navbar Script - 生成左侧大纲导航栏 -->
+    <!-- Navbar Script -->
     <script src="assets/scripts/navbar.js"></script> 
     
     <!-- MathJax Configuration from Clarity -->
@@ -47,7 +47,6 @@
         table tbody strong {
             font-weight: 700;
         }
-        /* 复刻的高级字体与文本样式 */
         body, .text, .caption {
             font-family: 'Charter', 'Bitstream Charter', 'Georgia', serif !important;
             color: #222222;
@@ -64,9 +63,6 @@
 
 <body>
 
-    <!-- ==============================================
-         1. 论文抬头 (Title, Authors, Affiliations, ICML)
-         ============================================== -->
     <div class="container blog" id="first-content" style="background-color: #F4F6F8; padding-top: 5rem; padding-bottom: 5rem;">
         <div class="blog-title no-cover" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; margin: 0 auto;">
             
@@ -89,7 +85,6 @@
                     <sup>6</sup>Cusp AI
                 </p>
 
-                <!-- 新增：ICML 会议标示 -->
                 <p class="conference" style="text-align: center; margin-top: 1.5rem; font-weight: 600; font-size: 1.15rem; color: #333; letter-spacing: 0.5px;">
                     <i class="fa-solid fa-award" style="color: #666; margin-right: 5px;"></i> ICML 2026
                 </p>
@@ -107,11 +102,6 @@
         </div>
     </div>
 
-
-    <!-- ==============================================
-         2. Teaser Section
-         ============================================== -->
-    <!-- 添加 id="blog-main" 确保 navbar 能正确依附 -->
     <div class="container blog main first" id="blog-main" style="padding-top: 3rem;">
         <img src="static/images/figure1.png" style="width: 60%; display: block; margin: 0 auto;">
         <p class="caption" style="text-align: center;">
@@ -119,10 +109,6 @@
         </p>
     </div>
 
-
-    <!-- ==============================================
-         3. Introduction
-         ============================================== -->
     <div class="container blog main">
         <h1>Introduction</h1>
         <p class="text">
@@ -134,10 +120,6 @@
         </p>
     </div>
 
-
-    <!-- ==============================================
-         4. GIF Animation Block
-         ============================================== -->
     <div class="container blog main">
         <h1>Krause Attention Mechanism</h1>
         <img src="static/images/kst_gif.gif" alt="Krause Attention Animation" style="width: 80%;">
@@ -186,7 +168,6 @@
             </div>
         </div>
     
-        <!-- 表格2 -->
         <div class="slide-content table-slide" style="display: none;">
             <p class="caption" style="text-align: center;">Image classification results on CIFAR-100.</p>
             <div class="table-wrapper">
@@ -208,7 +189,6 @@
             </div>
         </div>
     
-        <!-- 表格3 -->
         <div class="slide-content table-slide" style="display: none;">
             <p class="caption" style="text-align: center;">Image classification results on ImageNet-1K.</p>
             <div class="table-wrapper">
@@ -263,9 +243,6 @@
         </div>
     </div>
 
-        <!-- ==============================================
-         6. Vision Transformers Heatmaps
-         ============================================== -->
          <div class="container blog main">
             <h1>Attention Heatmaps in ViTs</h1>
             <br>
@@ -279,10 +256,6 @@
                 Evolution of attention scores across layers in KViTs/ViTs. <strong>Krause Attention</strong> (left) achieves stable multi-cluster formation, while standard attention (right) progressively converges to a single global consensus.
             </p>
         </div>
-
-        <!-- ==============================================
-        7. Image Generation
-        ============================================== -->
         
         <div class="container blog main">
             <h1>Autoregressive Image Generation</h1>
@@ -371,9 +344,6 @@
             </div>    
         </div>
 
-    <!-- ==============================================
-         5. Attention Sinks in LLMs
-         ============================================== -->
     <div class="container blog main">
         <h1>Alleviating Attention Sinks</h1>
         <br>
@@ -391,9 +361,6 @@
 
     </div>
 
-    <!-- ==============================================
-         8. BibTeX
-         ============================================== -->
     <div class="container blog main" id="bibtex">
         <h1>BibTeX</h1>
         <p class="text">If you find our work useful, please consider citing our paper:</p>
@@ -406,10 +373,6 @@
 }</code></pre>
     </div>
 
-
-    <!-- ==============================================
-         9. Footer
-         ============================================== -->
     <footer>
         <div class="container">
             <p style="font-family: 'Poppins', sans-serif;">
@@ -418,19 +381,18 @@
             </p>
         </div>    
     </footer>
-
-    <!-- Scripts -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     <script>
         function showTable(index) {
-            // 切换内容
+
             const slides = document.querySelectorAll('.table-slide');
             slides.forEach((el, i) => {
                 el.style.display = i === index ? 'block' : 'none';
             });
-            // 切换红点高亮
+
             const dots = document.querySelectorAll('#table-slide-menu .dot');
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === index);
