@@ -44,6 +44,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
+        table tbody strong {
+            font-weight: 700;
+        }
         /* 复刻的高级字体与文本样式 */
         body, .text, .caption {
             font-family: 'Charter', 'Bitstream Charter', 'Georgia', serif !important;
@@ -170,13 +173,13 @@
                         <tr><th>Models</th><th>Acc.</th><th>Parameters</th><th>FLOPs</th></tr>
                     </thead>
                     <tbody class="center">
-                        <tr><td>KViT-T (Ours)</td><td>93.81</td><td>5,362,774</td><td>0.25G</td></tr>
+                        <tr><td>KViT-T (Ours)</td><td><strong>93.81</strong></td><td>5,362,774</td><td><strong>0.25G</strong></td></tr>
                         <tr><td>ViT-T</td><td>90.75</td><td>5,362,762</td><td>0.37G</td></tr>
-                        <tr><td>KViT-S (Ours)</td><td>95.20</td><td>21,342,358</td><td>0.97G</td></tr>
+                        <tr><td>KViT-S (Ours)</td><td><strong>95.20</strong></td><td>21,342,358</td><td><strong>0.97G</strong></td></tr>
                         <tr><td>ViT-S</td><td>93.33</td><td>21,342,346</td><td>1.43G</td></tr>
-                        <tr><td>KViT-B (Ours)</td><td>95.35</td><td>85,152,022</td><td>3.77G</td></tr>
+                        <tr><td>KViT-B (Ours)</td><td><strong>95.35</strong></td><td>85,152,022</td><td><strong>3.77G</strong></td></tr>
                         <tr><td>ViT-B</td><td>92.45</td><td>85,152,010</td><td>5.61G</td></tr>
-                        <tr><td>KViT-B (RoPE) (Ours)</td><td>95.68</td><td>85,152,022</td><td>3.77G</td></tr>
+                        <tr><td>KViT-B (RoPE) (Ours)</td><td><strong>95.68</strong></td><td>85,152,022</td><td><strong>3.77G</strong></td></tr>
                         <tr><td>ViT-B (RoPE)</td><td>94.10</td><td>85,152,010</td><td>5.61G</td></tr>
                     </tbody>
                 </table>
@@ -192,13 +195,13 @@
                         <tr><th>Models</th><th>Acc.</th><th>Parameters</th><th>FLOPs</th></tr>
                     </thead>
                     <tbody class="center">
-                        <tr><td>KViT-T (Ours)</td><td>74.34</td><td>5,380,144</td><td>0.25G</td></tr>
+                        <tr><td>KViT-T (Ours)</td><td><strong>74.34</strong></td><td>5,380,144</td><td><strong>0.25G</strong></td></tr>
                         <tr><td>ViT-T</td><td>66.07</td><td>5,380,132</td><td>0.37G</td></tr>
-                        <tr><td>KViT-S (Ours)</td><td>71.74</td><td>21,377,008</td><td>0.97G</td></tr>
+                        <tr><td>KViT-S (Ours)</td><td><strong>71.74</strong></td><td>21,377,008</td><td><strong>0.97G</strong></td></tr>
                         <tr><td>ViT-S</td><td>77.05</td><td>21,376,996</td><td>1.43G</td></tr>
-                        <tr><td>KViT-B (Ours)</td><td>78.03</td><td>85,221,232</td><td>3.77G</td></tr>
+                        <tr><td>KViT-B (Ours)</td><td><strong>78.03</strong></td><td>85,221,232</td><td><strong>3.77G</strong></td></tr>
                         <tr><td>ViT-B</td><td>72.28</td><td>85,221,220</td><td>5.61G</td></tr>
-                        <tr><td>KViT-B (RoPE) (Ours)</td><td>79.65</td><td>85,221,232</td><td>3.77G</td></tr>
+                        <tr><td>KViT-B (RoPE) (Ours)</td><td><strong>79.65</strong></td><td>85,221,232</td><td><strong>3.77G</strong></td></tr>
                         <tr><td>ViT-B (RoPE)</td><td>74.84</td><td>85,221,220</td><td>5.61G</td></tr>
                     </tbody>
                 </table>
@@ -214,15 +217,15 @@
                         <tr><th>Models</th><th>Acc.</th><th>Parameters</th><th>FLOPs</th></tr>
                     </thead>
                     <tbody class="center">
-                        <tr><td>KViT-S-16 (Ours)</td><td>76.39</td><td>22,050,676</td><td>3.22G</td></tr>
+                        <tr><td>KViT-S-16 (Ours)</td><td><strong>76.39</strong></td><td>22,050,676</td><td><strong>3.22G</strong></td></tr>
                         <tr><td>ViT-S-16</td><td>75.54</td><td>22,050,664</td><td>4.62G</td></tr>
-                        <tr><td>KViT-S-32 (Ours)</td><td>72.04</td><td>22,878,964</td><td>0.79G</td></tr>
+                        <tr><td>KViT-S-32 (Ours)</td><td><strong>72.04</strong></td><td>22,878,964</td><td><strong>0.79G</strong></td></tr>
                         <tr><td>ViT-S-32</td><td>70.66</td><td>22,878,952</td><td>1.15G</td></tr>
-                        <tr><td>KViT-B-16 (Ours)</td><td>76.75</td><td>86,567,668</td><td>12.03G</td></tr>
+                        <tr><td>KViT-B-16 (Ours)</td><td><strong>76.75</strong></td><td>86,567,668</td><td><strong>12.03G</strong></td></tr>
                         <tr><td>ViT-B-16</td><td>75.85</td><td>86,567,656</td><td>17.61G</td></tr>
-                        <tr><td>KViT-B-16 (RoPE) (Ours)</td><td>78.61</td><td>86,567,668</td><td>12.03G</td></tr>
+                        <tr><td>KViT-B-16 (RoPE) (Ours)</td><td><strong>78.61</strong></td><td>86,567,668</td><td><strong>12.03G</strong></td></tr>
                         <tr><td>ViT-B-16 (RoPE)</td><td>78.40</td><td>86,567,656</td><td>17.62G</td></tr>
-                        <tr><td>KViT-B-32 (Ours)</td><td>71.49</td><td>88,224,244</td><td>3.00G</td></tr>
+                        <tr><td>KViT-B-32 (Ours)</td><td><strong>71.49</strong></td><td>88,224,244</td><td><strong>3.00G</strong></td></tr>
                         <tr><td>ViT-B-32</td><td>69.90</td><td>88,224,232</td><td>4.42G</td></tr>
                     </tbody>
                 </table>
@@ -233,11 +236,11 @@
             <p class="caption" style="text-align: center;">Image generation results of KARMs on MNIST.</p>
             <div class="table-wrapper">
                 <table>
-                    <thead class="center" style="white-space: nowrap;">
+                    <thead class="center">
                         <tr><th>Models</th><th>BPD</th><th>Images/sec</th><th>Time Complexity</th></tr>
                     </thead>
-                    <tbody class="center" style="white-space: nowrap;">
-                        <tr><td>KARM (Ours)</td><td>0.5652</td><td>105.6037</td><td>$O(NWd)$</td></tr>
+                    <tbody class="center">
+                        <tr><td>KARM (Ours)</td><td><strong>0.5652</strong></td><td>105.6037</td><td>$O(NWd)$</td></tr>
                         <tr><td>LARM</td><td>0.5855</td><td>499.3672</td><td>$O(Nd^2)$</td></tr>
                         <tr><td>ARM</td><td>0.5685</td><td>83.5772</td><td>$O(N^2d)$</td></tr>
                     </tbody>
@@ -247,11 +250,11 @@
             <p class="caption" style="text-align: center;">Image generation results of KARMs on CIFAR-10.</p>
             <div class="table-wrapper">
                 <table>
-                    <thead class="center" style="white-space: nowrap;">
+                    <thead class="center">
                         <tr><th>Models</th><th>BPD</th><th>Images/sec</th><th>Time Complexity</th></tr>
                     </thead>
-                    <tbody class="center" style="white-space: nowrap;">
-                        <tr><td>KARM (Ours)</td><td>3.0032</td><td>4.5240</td><td>$O(NWd)$</td></tr>
+                    <tbody class="center">
+                        <tr><td>KARM (Ours)</td><td><strong>3.0032</strong></td><td>4.5240</td><td>$O(NWd)$</td></tr>
                         <tr><td>LARM</td><td>3.1836</td><td>14.4032</td><td>$O(Nd^2)$</td></tr>
                         <tr><td>ARM</td><td>3.0224</td><td>1.8933</td><td>$O(N^2d)$</td></tr>
                     </tbody>
@@ -316,8 +319,8 @@
                             <tr><th>Models</th><th>BoolQ</th><th>CB</th><th>PIQA</th><th>MNLI</th><th>ANLI-R1</th><th>ANLI-R2</th><th>ANLI-R3</th><th>MMLU-Pro</th><th>IFEval</th></tr>
                         </thead>
                         <tbody class="center" style="white-space: nowrap;">
-                            <tr><td>Krause-Llama3-8B (Ours)</td><td>80.59</td><td>64.29/48.04</td><td>77.77</td><td>63.27/53.72</td><td>40.30/33.01</td><td>40.50/34.27</td><td>45.67/39.84</td><td>41.67</td><td>34.01</td></tr>
-                            <tr><td>Llama3-8B (finetuned w/ LoRA)</td><td>80.41</td><td>60.71/47.81</td><td>75.16</td><td>59.53/55.29</td><td>38.70/30.62</td><td>39.90/33.37</td><td>44.92/39.57</td><td>41.67</td><td>32.72</td></tr>
+                            <tr><td>Krause-Llama3-8B (Ours)</td><td><strong>80.59</strong></td><td><strong>64.29/48.04</strong></td><td><strong>77.77</strong></td><td><strong>63.27/53.72</strong></td><td><strong>40.30/33.01</strong></td><td><strong>40.50/34.27</strong></td><td><strong>45.67/39.84</strong></td><td><strong>41.67</strong></td><td><strong>34.01</strong></td></tr>
+                            <tr><td>Llama3-8B (finetuned w/ LoRA)</td><td>80.41</td><td>60.71/47.81</td><td>75.16</td><td>59.53/55.29</td><td>38.70/30.62</td><td>39.90/33.37</td><td>44.92/39.57</td><td><strong>41.67</strong></td><td>32.72</td></tr>
                             <tr><td>Llama3-8B</td><td>76.13</td><td>41.07/19.41</td><td>51.52</td><td>35.45/18.11</td><td>33.40/16.69</td><td>33.40/16.69</td><td>33.50/17.04</td><td>37.50</td><td>22.18</td></tr>
                         </tbody>
                     </table>
@@ -335,12 +338,12 @@
                                     <tr><th>Models</th><th>LAMBADA</th><th>CBT</th><th>PIQA</th><th>Blimp</th><th>Hellaswag</th><th>ARC-E</th></tr>
                                 </thead>
                                 <tbody class="center" style="white-space: nowrap;">
-                                    <tr><td><strong>Krause (Ours)</strong></td><td><strong>24.51</strong></td><td><strong>73.42</strong></td><td><strong>62.68</strong></td><td>76.76</td><td>27.78</td><td>48.04</td></tr>
-                                    <tr><td><strong>Window</strong></td><td><strong>24.51</strong></td><td>72.38</td><td>61.70</td><td>77.28</td><td>27.53</td><td>46.95</td></tr>
-                                    <tr><td><strong>Standard</strong></td><td>23.33</td><td>72.20</td><td>62.62</td><td>77.47</td><td>27.37</td><td>47.75</td></tr>
-                                    <tr><td><strong>Top-$k$</strong></td><td>22.80</td><td>71.24</td><td>61.81</td><td>75.66</td><td><strong>27.95</strong></td><td>48.04</td></tr>
-                                    <tr><td><strong>Longformer</strong></td><td>22.26</td><td>68.18</td><td>61.48</td><td>75.22</td><td>27.20</td><td>46.99</td></tr>
-                                    <tr><td><strong>Routing</strong></td><td>18.96</td><td>68.28</td><td>61.81</td><td><strong>78.73</strong></td><td>27.63</td><td><strong>49.09</strong></td></tr>
+                                    <tr><td>Krause (Ours)</td><td><strong>24.51</strong></td><td><strong>73.42</strong></td><td><strong>62.68</strong></td><td>76.76</td><td>27.78</td><td>48.04</td></tr>
+                                    <tr><td>Window</td><td><strong>24.51</strong></td><td>72.38</td><td>61.70</td><td>77.28</td><td>27.53</td><td>46.95</td></tr>
+                                    <tr><td>Standard</td><td>23.33</td><td>72.20</td><td>62.62</td><td>77.47</td><td>27.37</td><td>47.75</td></tr>
+                                    <tr><td>Top-$k$</td><td>22.80</td><td>71.24</td><td>61.81</td><td>75.66</td><td><strong>27.95</strong></td><td>48.04</td></tr>
+                                    <tr><td>Longformer</td><td>22.26</td><td>68.18</td><td>61.48</td><td>75.22</td><td>27.20</td><td>46.99</td></tr>
+                                    <tr><td>Routing</td><td>18.96</td><td>68.28</td><td>61.81</td><td><strong>78.73</strong></td><td>27.63</td><td><strong>49.09</strong></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -354,12 +357,12 @@
                                     <tr><th>Models</th><th>LAMBADA</th><th>CBT</th><th>PIQA</th><th>Blimp</th><th>Hellaswag</th><th>ARC-E</th></tr>
                                 </thead>
                                 <tbody class="center" style="white-space: nowrap;">
-                                    <tr><td><strong>Krause (Ours)</strong></td><td><strong>30.60</strong></td><td><strong>80.14</strong></td><td><strong>65.07</strong></td><td>79.89</td><td>29.81</td><td>51.54</td></tr>
-                                    <tr><td><strong>Window</strong></td><td>30.45</td><td>78.19</td><td>64.25</td><td>79.95</td><td>29.81</td><td>52.38</td></tr>
-                                    <tr><td><strong>Standard</strong></td><td>29.67</td><td>77.91</td><td>64.80</td><td>80.22</td><td>29.71</td><td>52.13</td></tr>
-                                    <tr><td><strong>Top-$k$</strong></td><td>30.31</td><td>79.35</td><td>64.53</td><td>80.44</td><td><strong>30.06</strong></td><td>52.00</td></tr>
-                                    <tr><td><strong>Longformer</strong></td><td>28.29</td><td>76.22</td><td>63.60</td><td>79.11</td><td>29.43</td><td>52.21</td></tr>
-                                    <tr><td><strong>Routing</strong></td><td>18.84</td><td>70.78</td><td>63.87</td><td><strong>80.77</strong></td><td>29.45</td><td><strong>52.46</strong></td></tr>
+                                    <tr><td>Krause (Ours)</td><td><strong>30.60</strong></td><td><strong>80.14</strong></td><td><strong>65.07</strong></td><td>79.89</td><td>29.81</td><td>51.54</td></tr>
+                                    <tr><td>Window</td><td>30.45</td><td>78.19</td><td>64.25</td><td>79.95</td><td>29.81</td><td>52.38</td></tr>
+                                    <tr><td>Standard</td><td>29.67</td><td>77.91</td><td>64.80</td><td>80.22</td><td>29.71</td><td>52.13</td></tr>
+                                    <tr><td>Top-$k$</td><td>30.31</td><td>79.35</td><td>64.53</td><td>80.44</td><td><strong>30.06</strong></td><td>52.00</td></tr>
+                                    <tr><td>Longformer</td><td>28.29</td><td>76.22</td><td>63.60</td><td>79.11</td><td>29.43</td><td>52.21</td></tr>
+                                    <tr><td>Routing</td><td>18.84</td><td>70.78</td><td>63.87</td><td><strong>80.77</strong></td><td>29.45</td><td><strong>52.46</strong></td></tr>
                                 </tbody>
                             </table>
                         </div>
