@@ -47,6 +47,7 @@
         table tbody strong {
             font-weight: 700;
         }
+        .caption strong { font-weight: 700 !important; }
         .text strong {
             font-weight: 700 !important;
         }
@@ -138,6 +139,44 @@
             By encoding locality and selective interactions into the design, Krause Attention turns clustering from <strong>a fragile, emergent phenomenon</strong> into a more <strong>stable architectural inductive bias</strong>. This helps preserve token diversity and improve robustness against representation collapse.
     </div>
 
+    <div class="container blog main">
+        <h1>Synchronization Dynamics</h1>
+
+        <div class="columns-2" style="margin-bottom: 1.5rem;">
+            <div>
+                <img src="static/images/krause_attn_notitle_2d.gif" alt="2d krause attention" style="width: 100%; display: block;">
+                <p class="caption" style="text-align: center; margin-top: 0.75rem;">
+                    Evolution of tokens under <strong>Krause Attention</strong> dynamics on the unit circle.
+                </p>
+            </div>
+            <div>
+                <img src="static/images/standard_attn_2d_notitle.gif" alt="2d standard attention" style="width: 100%; display: block;">
+                <p class="caption" style="text-align: center; margin-top: 0.75rem;">
+                    Evolution of tokens under <strong>standard attention</strong> dynamics on the unit circle.
+                </p>
+            </div>
+        </div>
+
+        <div class="columns-2">
+            <div>
+                <img src="static/images/krause_attn_notitle_3d.gif" alt="3d krause attention" style="width: 100%; display: block;">
+                <p class="caption" style="text-align: center; margin-top: 0.75rem;">
+                    Evolution of tokens under <strong>Krause Attention</strong> dynamics on the unit sphere.
+                </p>
+            </div>
+            <div>
+                <img src="static/images/standard_attn_3d_notitle.gif" alt="3d standard attention" style="width: 100%; display: block;">
+                <p class="caption" style="text-align: center; margin-top: 0.75rem;">
+                    Evolution of tokens under <strong>standard attention</strong> dynamics on the unit sphere.
+                </p>
+            </div>
+        </div>
+
+        <p class="text" style="margin-top: 2rem;">
+            The animations above demonstrate the difference in token interaction dynamics. We simulate 200 particles on a unit circle and sphere. Initialized with random velocities, these particles evolve according to the two distinct dynamics. The results show that Krause Attention promotes stable <strong>multi-cluster synchronization</strong>, while standard attention tends to drive particles toward a single consensus, ultimately leading to <strong>global synchronization</strong>.
+        </p>
+    </div>
+    
     <div class="container blog main">
         <h1>Vision Experimental Results</h1>
     
